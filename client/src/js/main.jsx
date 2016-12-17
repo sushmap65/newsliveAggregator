@@ -1,60 +1,36 @@
-	import 'file?name=[name].[ext]!../index.html';
-	import React from 'react';
-	import ReactDOM from 'react-dom';
-	import NewsSearch from './components/newssearch.jsx';
-	import NewsDisplay from './components/newsdisplay.jsx';
+import 'file?name=[name].[ext]!../index.html';
+import React from 'react';
+import ReactDOM from 'react-dom';
+var {browserHistory,hashHistory, Route, Router, IndexRoute}
+= require('react-router');
+
+import About from './components/about.jsx';
+import Home from './components/Home.jsx';
+import Contact from './components/contact.jsx';
+import NavBar from './components/navbar.jsx';
+import FavNews from './components/favnews.jsx';
 
 
+class MainComponent extends React.Component{
 
-	class MainComponent extends React.Component{
-	constructor(){
-	super();
-	this.state={srtdata:[]};
-	this.fetchNewsFromExternalAPI=this.fetchNewsFromExternalAPI.bind(this);
+render(){
 
-	}
+return (
+<div>
+<NavBar/>
+<br/><br/><br/><br/>
+	{this.props.children}
+</div>
+)
+}
+}
+ReactDOM.render(
+<Router history={browserHistory}>
+						 <Route path="/" component={MainComponent} >
+                <Route path="/home" component={Home} />
+						    <Route path="/favnews" component={FavNews}/>
+                <Route path="/about" component={About}/>
+                <Route path="/contact" component={Contact}/>
+            </Route>
 
-	fetchNewsFromExternalAPI(url) {
-	console.log("676768");
-	$.ajax({
-	url:  "https://newsapi.org/v1/articles?source="+url+"&sortBy=top&apiKey=7b2590fcfa3443dda529a57af2d2a0b0",
-	type: "GET",
-	dataType: 'JSON',
-    
-	success : function(msg){
-	/*msg reprewsents JSON data of news headlines sent back by external API*/
-	this.setState({srtdata: msg.articles});
-	}.bind(this),
-	error : function(err){
-	console.log("error");
-	}.bind(this)
-	});
-	}
-
-
-	render(){
-	var m=this.state.srtdata;
-	
-
-	return(
-	<div>
-
-
-
-	< NewsSearch ajaxUri={this.fetchNewsFromExternalAPI.bind(this)} />
-	<NewsDisplay  newsArrRef={m} />
-
-
-
-
-	</div>
-
-
-	)
-
-	}
-	}
-
-	ReactDOM.render(
-	<MainComponent/>,document.getElementById('content')
-	);
+</Router>,document.getElementById('content'));

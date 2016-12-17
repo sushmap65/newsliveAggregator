@@ -14,7 +14,9 @@ render(){
 	var news=this.props.newsArrRef.map(function(HeadElement){
 	return (
 
+  
 	<Displaycontainer news={HeadElement} />
+
 
 	)
 	});
