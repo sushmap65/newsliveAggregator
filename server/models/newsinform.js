@@ -8,7 +8,8 @@ var newsdetails = new Schema({
 	"description":String,
 	"url":String,
 	"urlToImage":String,
-	"publishedAt":String
+	"publishedAt":String,
+	"comment":String
 });
 
 module.exports = mongoose.model('newsinformation',newsdetails);

@@ -14,6 +14,7 @@ router.post('/addtodb', function(req, res, next) {
 		newsinfo.url=req.body.url;
 		newsinfo.urlToImage=req.body.urlToImage;
 		newsinfo.publishedAt=req.body.publishedAt;
+		newsinfo.comment=req.body.comment;
 		
 		newsinfo.save(function(err){
 			
@@ -61,8 +62,8 @@ router.put('/update', function(req, res, next) {
 	if(req.body)
 	{
 		var request1=req.body.title;
-		var request2=req.body.description;
-		news.update({title:request1},{$set:{description:request2}},function(err){
+		var request2=req.body.comment;
+		news.update({title:request1},{$set:{comment:request2}},function(err){
 
 			if(err) {
 				res.send(err);
