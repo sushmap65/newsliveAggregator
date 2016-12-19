@@ -7,7 +7,6 @@ super();
 this.buttonHandler=this.buttonHandler.bind(this);
 
 }
-
 buttonHandler(news){
 $.ajax({
 url:  "http://localhost:8987/news/addtodb",
@@ -15,10 +14,10 @@ type: 'POST',
 data: this.props.news,
 
 success : function(msg){
-console.log("inserted");
+alert("news saved");
 }.bind(this),
 error : function(err){
-console.log("error");
+alert("error");
 }.bind(this)
 });
 }
@@ -34,30 +33,20 @@ return(
 <div className = "row">
 <div className="well col-md-6">
 
-<img src={this.props.news.urlToImage} id="images" alt="image" width="400"/>
+<img src={this.props.news.urlToImage} id="images" alt="image" width="500"/>
 </div>
 
 
-<div className="well col-md-6">
-
+<div className="col-md-6">
+<div className="well">
 <h2>{this.props.news.title}</h2>
 <h2>{this.props.news.descriptions}</h2><br /><br /><br />
+</div>
 
-</div>
-</div>
-</div>
-<div className="row">
-<div className="col-md-6">
-</div>
-<div className="col-md-6">
+
 <h4>{this.props.news.url}</h4> <br />
 <h5> {this.props.news.publishedAt}</h5>
-</div>
-</div>
-<div className="row">
-<div className="col-sm-6">
-</div>
-<div className="col-sm-6">
+
 <form ><input className="btn btn-success btn-lg" type="button" value="save" data-toggle="modal" data-target="#myModal" onClick={this.buttonHandler} />
 
 <div className="modal fade in" id="myModal" role="dialog">
@@ -76,14 +65,16 @@ return(
 
    </div>
 <br /><br />
-<input type="textArea" rows="30" cols="50" name="comment" placeholder="Comments..." /><br /><br />
-<input className="btn btn-warning btn-lg" type="button" value="update comments"/>
+<textArea  name="comment" placeholder="Comments..." on/><br /><br />
+
 </form>
 
 </div>
 </div>
 </div>
 </div>
+</div>
+
 )
 }
 }
