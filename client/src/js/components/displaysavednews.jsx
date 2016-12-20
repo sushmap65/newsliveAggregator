@@ -10,8 +10,9 @@ this.handleUpdate=this.handleUpdate.bind(this);
 this.updateComment=this.updateComment.bind(this);
 }
 
-updateComment(t){
-this.setState({comment:t.target.value});
+updateComment(t){console.log("ttttttt");
+
+this.setState({srtdata:t.target.value});
 }
 
 handleUpdate()
@@ -62,10 +63,7 @@ return(
 
 <div className = "container-fluid">
 <div className="jumbotron">
-<div className="row">
-<h1>{this.props.news.author}</h1>
-</div>
-<div className="container-fluid">
+<div className="container">
 <div className = "row">
 <div className="well col-md-6">
 
@@ -78,16 +76,15 @@ return(
 <h2>{this.props.news.title}</h2>
 <h2>{this.props.news.descriptions}</h2><br /><br /><br />
 </div>
+<p><h6>{this.props.news.url}</h6></p>
+<p><h6> {this.props.news.publishedAt}</h6></p>
 
+<form >
 
-<h4>{this.props.news.url}</h4> <br />
-<h5> {this.props.news.publishedAt}</h5>
-
-<form ><input className="btn btn-success btn-lg" type="button" value="Delete"  onClick={this.buttonHandler} />
-&nbsp; &nbsp; &nbsp;<br />
 <textArea placeholder="your comments here" onChange={this.updateComment.bind(this)} ></textArea>
-&nbsp; &nbsp; &nbsp;
-<input type="button" class="btn btn-warning btn-lg" value="Update"  onClick={this.handleUpdate}/>
+&nbsp; &nbsp; &nbsp;<br/> <br/> <br/>
+<input className="btn btn-success btn-lg" type="button" value="Delete"  onClick={this.buttonHandler} />&nbsp; &nbsp;
+<input type="button" className="btn btn-warning btn-lg" value="Update"  onClick={this.handleUpdate}/>
 
 
 </form>

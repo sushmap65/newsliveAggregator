@@ -28,6 +28,7 @@ alert("error");
 render(){
 
 return(
+
 <div className = "container-fluid">
 <div className="jumbotron">
 <div className="row">
@@ -48,8 +49,8 @@ return(
 </div>
 
 
-<h4>{this.props.news.url}</h4> <br />
-<h5> {this.props.news.publishedAt}</h5>
+<h6>{this.props.news.url}</h6> <br />
+<h6> {this.props.news.publishedAt}</h6>
 
 <form ><input className="btn btn-success btn-lg" type="button" value="save" onClick={this.buttonHandler} />
 </form>
