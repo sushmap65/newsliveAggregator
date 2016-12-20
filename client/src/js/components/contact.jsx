@@ -10,13 +10,16 @@ render()
            <div className="col-md-12">
                <div className="jumbotron">
                    <h2>
-                       contact Us
+                       Contact Us
                    </h2>
                    <p>
-                       This is contact Us.
+                       <a href="newsliveaggregator.com" target="_blank">newsliveaggregator.com</a>
                    </p>
                    <p>
-                       <a className="btn btn-primary btn-large" href="#">Learn more</a>
+                   for more queries and feedback
+                   contact us</p>
+                   <p>
+                   We are here to serve u with our best..
                    </p>
                </div>
            </div>

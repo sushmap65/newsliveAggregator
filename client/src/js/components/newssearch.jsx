@@ -21,29 +21,23 @@
 
 	render(){
 	return(
-     <div class="container-fluid" >
-<div class="row">
-
-   <div id="custom-search-input">
-   <div className="input-group col-md-4">
-
-   </div>
-                    <div className="input-group col-md-4" >
-                        <input type="text" className="search-query form-control" id="search"  placeholder="Search"  />
-
-                        <span className="input-group-btn">
-                            <input className="btn btn-danger" type="button" value="Search" onClick={this.buttonHandler} />
-                                <span className="glyphicon glyphicon-search"></span>
-
-                        </span>
-                    </div>
-                    <div className="input-group col-md-4">
-
-                    </div>
-                </div>
-                </div>
-                </div>
-
+	<div className="container">
+<div className="row">
+		 <div className="col-md-6">
+		 <h2>Search the News</h2>
+				 <div id="custom-search-input">
+						 <div className="input-group col-md-12">
+								 <input type="text" className="form-control input-lg" placeholder="Search..." id="search" />
+								 <span className="input-group-btn">
+										 <button className="btn btn-info btn-lg" type="button" onClick={this.buttonHandler}>
+												 <i className="glyphicon glyphicon-search"></i>
+										 </button>
+								 </span>
+						 </div>
+				 </div>
+		 </div>
+</div>
+</div>
 
 	)
 	}

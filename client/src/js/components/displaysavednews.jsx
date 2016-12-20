@@ -72,7 +72,7 @@ return(
 
 
 <div className="col-md-6">
-<div className="well">
+<div className="well" id="newswell">
 <h2>{this.props.news.title}</h2>
 <h2>{this.props.news.description}</h2><br /><br /><br />
 </div>

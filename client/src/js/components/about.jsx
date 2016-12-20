@@ -22,7 +22,7 @@ render()
                          The updates distributed include, for example, journal tables of contents, podcasts, videos, and news items
                    </p>
                    <p>
-                       <a className="btn btn-primary btn-large" href="#">Learn more</a>
+                       
                    </p>
                </div>
            </div>

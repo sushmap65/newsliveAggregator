@@ -6,9 +6,6 @@ super();
 }
 
 
-handleRegister(){
-browserHistory.push('/Sign');
-}
 
 buttonHandler(){
 console.log("67687");
@@ -43,10 +40,10 @@ return(
             <div className="well" align="center">
               <p><input type="text" className="span3" name="eid" name="username" id="user" placeholder="username" /></p>
               <p><input type="password" className="span3" name="passwd" id="pswd" placeholder="password" /></p></div>
-              <p><input type="button" className="btn btn-primary" value="Login in" onClick={this.buttonHandler.bind(this)}/>
-							<p><input type="button" className="btn btn-success" value="Register" onClick={this.handleRegister.bind(this)}/>
+              <p><input type="button" className="btn btn-primary" value="Login in" onClick={this.buttonHandler.bind(this)}/> &nbsp;
+							<input type="button" className="btn btn-success" value="Register" /></p>
 
-              </p>
+
             </form>
 
 
