@@ -9,6 +9,7 @@ import Home from './components/Home.jsx';
 import Contact from './components/contact.jsx';
 import NavBar from './components/navbar.jsx';
 import FavNews from './components/favnews.jsx';
+import Login from './components/Login.jsx';
 
 
 class MainComponent extends React.Component{
@@ -25,8 +26,9 @@ return (
 }
 }
 ReactDOM.render(
-<Router history={browserHistory}>
+<Router history={hashHistory}>
 						 <Route path="/" component={MainComponent} >
+						    <Route path="/Login" component={Login}/>
                 <Route path="/home" component={Home} />
 						    <Route path="/favnews" component={FavNews}/>
                 <Route path="/about" component={About}/>

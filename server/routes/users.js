@@ -1,4 +1,5 @@
 var express = require('express');
+var passport = require('passport');
 var router = express.Router();
 
 var user = require('../models/userinform');
@@ -11,13 +12,13 @@ router.get('/', function(req, res, next) {
 //localhost:8081/users/userauthentication
 
 router.post('/userauthentication', function(req, res) {
-	
+
 	var username = req.body.test;
 	var password = req.body.test2;
 	console.log(username);
 	console.log(password);
-	
-	
+
+
 
 	res.send("Username is "+username+"and password is"+password);
 
@@ -29,9 +30,9 @@ router.post('/addtodb',function(req,res,next){
 		var userinfo = new user();
 		userinfo.username=req.body.username;
 		userinfo.password=req.body.password;
-		
+
 		userinfo.save(function(err){
-			
+
 
 			if(err){
 				console.log("not inserted");

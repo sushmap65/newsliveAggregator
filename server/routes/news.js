@@ -14,10 +14,10 @@ router.post('/addtodb', function(req, res, next) {
 		newsinfo.url=req.body.url;
 		newsinfo.urlToImage=req.body.urlToImage;
 		newsinfo.publishedAt=req.body.publishedAt;
-		newsinfo.comment=req.body.comment;
-		
+		newsinfo.comment=" ";
+
 		newsinfo.save(function(err){
-			
+
 
 			if(err){
 				console.log("not inserted");
@@ -48,7 +48,7 @@ router.delete('/delete', function(req, res, next) {
 			else{
 				res.send('deleted');
 			}
-			
+
 		});
 	}
 
@@ -70,7 +70,7 @@ router.put('/update', function(req, res, next) {
 			}
 			else  {
 				res.send("News updated");
-			}  
+			}
 		});
 	}
 });
@@ -80,7 +80,7 @@ router.put('/update', function(req, res, next) {
 
 
 router.get('/view', function(req, res, next) {
-	
+
 	var cursor = news.find({},function(err,allnews){
 		if(err){
 			res.send(err);
