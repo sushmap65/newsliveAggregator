@@ -14,6 +14,7 @@ render() {
      <div className="container-fluid">
        <ul className="nav navbar-nav">
            <li><Link to="/Login">Login</Link></li>
+           <li><Link to="/Sign">Signup</Link></li>
            <li><Link to="/home">Home</Link></li>
            <li><Link to="/favnews">favnews</Link></li>
            <li><Link to="/contact">Contact Us</Link></li>

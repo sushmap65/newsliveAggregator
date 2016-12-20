@@ -10,6 +10,7 @@ import Contact from './components/contact.jsx';
 import NavBar from './components/navbar.jsx';
 import FavNews from './components/favnews.jsx';
 import Login from './components/Login.jsx';
+import Sign from './components/Sign.jsx';
 
 
 class MainComponent extends React.Component{
@@ -26,9 +27,11 @@ return (
 }
 }
 ReactDOM.render(
-<Router history={hashHistory}>
+<Router history={browserHistory}>
 						 <Route path="/" component={MainComponent} >
 						    <IndexRoute component={Login}/>
+								<Route path="/Login" component={Login} />
+								<Route path="/Sign" component={Sign} />
                 <Route path="/home" component={Home} />
 						    <Route path="/favnews" component={FavNews}/>
                 <Route path="/about" component={About}/>

@@ -36,16 +36,18 @@ return(
 </div>
 <div className="container-fluid">
 <div className = "row">
-<div className="well col-md-6">
+<div className=" col-md-6">
 
-<img src={this.props.news.urlToImage} id="images" alt="image" width="500"/>
+
+<img className="img-responsive" src={this.props.news.urlToImage} id="images" alt="image" width="400"/>
 </div>
+
 
 
 <div className="col-md-6">
 <div className="well">
 <h2>{this.props.news.title}</h2>
-<h2>{this.props.news.descriptions}</h2><br /><br /><br />
+<h2>{this.props.news.description}</h2><br /><br /><br />
 </div>
 
 

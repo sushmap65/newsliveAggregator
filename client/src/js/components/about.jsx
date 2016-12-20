@@ -13,7 +13,13 @@ render()
                        About Us
                    </h2>
                    <p>
-                       This is About Us.
+                       a news aggregator, also termed a feed aggregator,
+                        feed reader, news reader, RSS reader or simply aggregator, is client
+                        software or a web application which aggregates syndicated web content such as online newspapers,
+                         blogs, podcasts, and video blogs (vlogs) in one location for easy viewing. RSS is a synchronized
+                         subscription system. Basically, RSS uses extensible markup language (XML) to structure pieces of information
+                         to be aggregated in a feed reader that displays the information in a user-friendly interface.
+                         The updates distributed include, for example, journal tables of contents, podcasts, videos, and news items
                    </p>
                    <p>
                        <a className="btn btn-primary btn-large" href="#">Learn more</a>

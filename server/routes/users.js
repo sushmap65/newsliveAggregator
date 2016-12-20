@@ -1,6 +1,9 @@
 var express = require('express');
 var passport = require('passport');
 var router = express.Router();
+var LocalStrategy=require('passport-local').Strategy;
+var connectflash=require('connect-flash');
+
 
 var user = require('../models/userinform');
 
@@ -8,6 +11,15 @@ var user = require('../models/userinform');
 router.get('/', function(req, res, next) {
 	res.send('respond with a resource');
 });
+
+
+router.post('/login',
+passport.authenticate('local', { failureRedirect: '/Login' }),
+function(req, res) {
+res.send('welcome to login');
+});
+
+
 
 //localhost:8081/users/userauthentication
 
