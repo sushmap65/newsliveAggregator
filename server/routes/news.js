@@ -5,7 +5,7 @@ var news = require('../models/newsinform');
 
 //localhost:8081/news/addtodb
 
-router.post('/addtodb', function(req, res, next) {
+router.post('/addtodb', isLoggedIn , function(req, res, next) {
 	if(req.body){
 		var newsinfo = new news();
 		newsinfo.author=req.body.author;
@@ -38,7 +38,7 @@ router.post('/addtodb', function(req, res, next) {
 
 //localhost:8081/news/delete
 
-router.delete('/delete', function(req, res, next) {
+router.delete('/delete', isLoggedIn ,function(req, res, next) {
 	var title = req.body.title;
 	if(title){
 		news.remove({title:title},function(err){
@@ -58,7 +58,7 @@ router.delete('/delete', function(req, res, next) {
 
 //localhost:8081/news/update
 
-router.put('/update', function(req, res, next) {
+router.put('/update', isLoggedIn ,function(req, res, next) {
 	if(req.body)
 	{
 		var request1=req.body.title;
@@ -79,7 +79,7 @@ router.put('/update', function(req, res, next) {
 //localhost:8081/news/view
 
 
-router.get('/view', function(req, res, next) {
+router.get('/view',isLoggedIn, function(req, res, next) {
 
 	var cursor = news.find({},function(err,allnews){
 		if(err){
@@ -94,5 +94,12 @@ router.get('/view', function(req, res, next) {
 	});
 });
 
-
+function isLoggedIn (req, res, next) {
+ if(req.isAuthenticated()){
+ return next()
+ ;}
+ else {
+   res.json('not authenticated');
+ }
+ };
 module.exports = router;

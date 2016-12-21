@@ -13,10 +13,9 @@
   font-size: 21px;
 }
 
-#newswell{
-	padding-left: 50px;
+#loginwell{
+	background-color: #E4E4E4;
 }
-
 #custom-search-input{
     padding: 3px;
     border: solid 1px #E4E4E4;

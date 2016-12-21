@@ -12,7 +12,7 @@ username:document.getElementById("user").value,
 password:document.getElementById("pswd").value
 };
 $.ajax({
-url: "http://localhost:8987/users/addtodb",
+url: "http://localhost:8987/users/Signup",
 type: "POST",
 data: obj,
 
@@ -21,7 +21,7 @@ success : function(msg)
 console.log("successfully Registered to database");
 
 	alert("succesfully Registeredin");
-	//browserHistory.push('/home');
+	browserHistory.push('/home');
 }.bind(this),
 error : function(err){
 console.log("error");

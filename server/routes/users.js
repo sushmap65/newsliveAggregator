@@ -37,7 +37,7 @@ router.post('/userauthentication', function(req, res) {
 });
 
 
-router.post('/addtodb',function(req,res,next){
+router.post('/Signup',function(req,res,next){
 	if(req.body){
 		var userinfo = new user();
 		userinfo.username=req.body.username;

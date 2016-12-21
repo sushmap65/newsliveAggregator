@@ -58,6 +58,7 @@ app.use(bodyParser.json());//middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, './client/assets')));
+app.use(require('express-session')({ secret: 'accesskey'}));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(connectflash());
