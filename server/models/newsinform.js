@@ -13,4 +13,3 @@ var newsdetails = new Schema({
 });
 
 module.exports = mongoose.model('newsinformation',newsdetails);
-

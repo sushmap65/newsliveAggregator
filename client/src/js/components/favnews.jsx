@@ -33,16 +33,16 @@ this.viewfavourites();
 render()
 {
 var obj=this.state.srtdata.map(function(HeadElement){
- return(
+return(
 
- <DisplaySavedNews news={HeadElement} />
- )
- });
+<DisplaySavedNews news={HeadElement} />
+)
+});
 
- return(
- <div>
- {obj};
- </div>
- )
- }
+return(
+<div>
+{obj};
+</div>
+)
+}
 }

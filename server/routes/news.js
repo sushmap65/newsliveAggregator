@@ -17,14 +17,10 @@ router.post('/addtodb', isLoggedIn , function(req, res, next) {
 		newsinfo.comment=" ";
 
 		newsinfo.save(function(err){
-
-
 			if(err){
-				console.log("not inserted");
 				res.send('news not inserted');
 			}
 			else{
-				console.log("inserted");
 				res.send('news inserted');
 			}
 		});
@@ -96,9 +92,11 @@ router.get('/view',isLoggedIn, function(req, res, next) {
 
 function isLoggedIn (req, res, next) {
  if(req.isAuthenticated()){
+	 console.log("islogged if");
  return next()
  ;}
  else {
+	 console.log("islogged else")
    res.json('not authenticated');
  }
  };
